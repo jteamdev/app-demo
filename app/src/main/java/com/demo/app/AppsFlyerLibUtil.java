@@ -13,32 +13,39 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 登录：“login”
- * 登出：“logout”
- * 点击注册：“registerClick”
- * 注册成功 ：“register”
- * 点击充值：“rechargeClick” 需要解析处理
- * *首充成功 ：“firstrecharge” 需要解析处理
- * *复充成功 ：“recharge” 需要解析处理
- * 提现点击：“withdrawClick”
- * *提现成功 ：“withdrawOrderSuccess”
- * 进入游戏(包含三方与自营)：“enterGame”
- * 领取vip奖励：“vipReward”
- * 领取每日奖励：“dailyReward”
- * 新增交互事件
- * 1. 活动中心（进入页面）：“enterEventCenter”
- * 2. 任务中心（进入页面）：“enterTask”
- * 3. 实时返水（进入页面）：“enterCashback”
- * 4. 推广赚钱（进入页面）：“enterPromote”
- * 5. 6张banner图（每张图的点击事件）：“bannerClick”
- * 存取款的事件内容有额外带上金额以及币种
- * 例：
- * 存款: {\"amount\":\"200\",\"currency\":\"PHP\",\"isFirst\":0,\"success\":1}
- * 取款: {\"amount\":\"104\",\"currency\":\"PHP\",\"success\":1}
+ *
+ * 頁面瀏覽
+ * 1. 页面转换时的浏览纪录："page_view"
+ * 2. 开启页面："open_page"
+ * 3. 关闭页面："close_page"
+ * 注册流程事件
+ * 1. 点击注册："click_register"
+ * 2. 点击OTP驗證："click_OTP_verify"
+ * 3. 点击银行资讯："click_binding_bank"
+ * 4. 点击领取freeCredit："click_free_credit"
+ * 5. 点击promoCode："click_promo_code"
+ * 注册流程事件 - 成功
+ * 1. 成功註册："sign_up_success"
+ * 2. 成功验证OTP："OTP_verification_success"
+ * 3. 成功验证银行资料："bank_verification_success"
+ * 登入成功："login_success"
+ * 存款相关
+ * 1. 点击充值按钮："click_deposit"
+ * 2. 提交充值："submit_deposit"
+ * 3. 充值成功："purchase"
+ * 4. 首充成功："First Deposit"
+ * 活动相关点击
+ * 1. 点击活动："activity_click"
+ * 2. 点击活动说明："activity_detail"
+ * 点击进入游戏："game_click"
+ * 大厅点击事件："lobby_click"
+ * 搜寻事件："search"
+ * 弹出错误视窗："error_event"
+
  */
 public class AppsFlyerLibUtil {
     private static final String TAG = "AppsFlyerLibUtil";
-    private static final String APPSFLYER_KEY = "bhaX8sZuAVbXc28VHhwoDf";
+    private static final String APPSFLYER_KEY = "bhaX8sZaAVbXc28VHtwsDf";
 
     /**
      * 初始化AppsFlyer
