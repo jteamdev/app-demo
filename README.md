@@ -1,7 +1,4 @@
-
-### 马甲包推送事件
-
----
+# 马甲包推送事件
 
 H5与马甲包的沟通，请马甲包在webview下的window插入对象jsBridge，内容提供回调函数postMessage
 
@@ -39,9 +36,6 @@ window.jsBridge?.postMessage(eventName, params)
 |  |  | 弹出错误视窗："error_event"
 
 
-
-### 詳細查閱
-
----
+# 詳細查閱
 
 [wiki](https://github.com/jteamdev/app-demo/wiki)
