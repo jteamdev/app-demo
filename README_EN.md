@@ -210,7 +210,7 @@ setting.setUserAgentString(setting.getUserAgentString() + " th1games_v" + BuildC
   - currency - Currency
   - value - Numeric value
 
-**First Deposit**
+**first_deposit**
 
 - **Trigger Conditions**
   - First deposit.
