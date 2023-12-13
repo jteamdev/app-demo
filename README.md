@@ -1,8 +1,23 @@
 # 马甲包推送事件
 
 H5与马甲包的沟通，请马甲包在webview下的window插入对象jsBridge，内容提供回调函数postMessage
+```kotlin
+webView.addJavascriptInterface(new JsInterface(), "jsBridge");
+```
+接收事件
+```kotlin
+// Android 调用 Js 方法 中的返回值
+@JavascriptInterface
+public void postMessage(String name, String data) {
+    Log.e(TAG, "name = " + name + "    data = " + data);
+    if (TextUtils.isEmpty(name) || TextUtils.isEmpty(data)) {
+        return;
+    }
+    AppsFlyerLibUtil.event(MainActivity.this, name, data);
+}
+```
 
-h5回调代码如下 : 
+H5回调代码如下 : 
 
 ```jsx
 window.jsBridge?.postMessage(eventName, params)
