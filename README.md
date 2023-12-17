@@ -6,15 +6,18 @@ webView.addJavascriptInterface(new JsInterface(), "jsBridge");
 ```
 接收事件
 ```kotlin
-// Android 调用 Js 方法 中的返回值
-@JavascriptInterface
-public void postMessage(String name, String data) {
-    Log.e(TAG, "name = " + name + "    data = " + data);
-    if (TextUtils.isEmpty(name) || TextUtils.isEmpty(data)) {
-        return;
+public class JsInterface {
+    // Android 调用 Js 方法1 中的返回值
+    @JavascriptInterface
+    public void postMessage(String name, String data) {
+        Log.e(TAG, "name = " + name + "    data = " + data);
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(data)) {
+            return;
+        }
+        AppsFlyerLibUtil.event(MainActivity.this, name, data);
     }
-    AppsFlyerLibUtil.event(MainActivity.this, name, data);
 }
+
 ```
 
 H5回调代码如下 : 
