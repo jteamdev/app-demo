@@ -88,6 +88,7 @@ public class MainActivity extends Activity {
         webView.loadUrl(loadUrl);
         setContentView(webView);
         AppsFlyerLibUtil.init(this);
+        FirebaseLibUtil.INSTANCE.init(this);
 
     }
 
@@ -203,6 +204,7 @@ public class MainActivity extends Activity {
                 return;
             }
             AppsFlyerLibUtil.event(MainActivity.this, name, data);
+            FirebaseLibUtil.INSTANCE.logEvent(data);
         }
     }
 
